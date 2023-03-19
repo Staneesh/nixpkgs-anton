@@ -4,10 +4,15 @@
 		enable = true;
 		# Hook direnv program to bash shell on shell startup
 		# Start ssh-agent and add private keys
-		bashrcExtra = ''
+		profileExtra = ''
 			eval "$(direnv hook bash)"
 			eval "$(ssh-agent)" && ssh-add ~/.ssh/github
 		'';
+	};
+	programs.git = {
+		enable = true;
+		userName = "Staneesh";
+		userEmail = "blkreasons@outlook.com";
 	};
 
 	home.stateVersion = "22.11";
