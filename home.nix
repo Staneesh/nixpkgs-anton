@@ -14,6 +14,9 @@
 		userName = "Staneesh";
 		userEmail = "blkreasons@outlook.com";
 	};
+	programs.starship = {
+		enable = true;
+	};
 
 	home.stateVersion = "22.11";
 	home.username = "stanisz";
@@ -21,6 +24,5 @@
 
 	home.packages = with pkgs; [
 		direnv		# Automatic shell.nix activation in programming environments
-		zellij		# Terminal multiplexter written in Rust
 	];
 }
