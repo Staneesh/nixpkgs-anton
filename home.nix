@@ -1,4 +1,4 @@
-{ pkgs, lib, ...}: {
+{ pkgs, lib, nixpkgs, ...}: {
 	programs.home-manager.enable = true;
 	programs.bash = {
 		enable = true;
@@ -17,12 +17,12 @@
 	programs.starship = {
 		enable = true;
 	};
+	programs.direnv = {
+		enable = true;
+		nix-direnv.enable = true;
+	};
 
 	home.stateVersion = "22.11";
 	home.username = "stanisz";
 	home.homeDirectory = "/home/stanisz";
-
-	home.packages = with pkgs; [
-		direnv		# Automatic shell.nix activation in programming environments
-	];
 }
