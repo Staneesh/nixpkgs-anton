@@ -1,5 +1,6 @@
 { pkgs, lib, nixpkgs, ...}: {
 	programs.home-manager.enable = true;
+
 	programs.bash = {
 		enable = true;
 		# Hook direnv program to bash shell on shell startup
