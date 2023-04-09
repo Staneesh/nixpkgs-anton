@@ -3,11 +3,11 @@
 	programs.bash = {
 		enable = true;
 		# Hook direnv program to bash shell on shell startup
-		# Start ssh-agent and add private keys
-		profileExtra = ''
-			eval "$(direnv hook bash)"
-			eval "$(ssh-agent)" && ssh-add ~/.ssh/github
-		'';
+		# Start ssh-agent and add private keys - this is not needed if the key has a standard name
+		#profileExtra = ''
+		#	eval "$(direnv hook bash)"
+		#	eval "$(ssh-agent)" && ssh-add ~/.ssh/github
+		#'';
 	};
 	programs.git = {
 		enable = true;
