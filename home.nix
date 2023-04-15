@@ -10,18 +10,30 @@
 		#	eval "$(ssh-agent)" && ssh-add ~/.ssh/github
 		#'';
 	};
+
 	programs.git = {
 		enable = true;
 		userName = "Staneesh";
 		userEmail = "blkreasons@outlook.com";
 	};
+
 	programs.starship = {
 		enable = true;
 	};
+
 	programs.direnv = {
 		enable = true;
 		nix-direnv.enable = true;
 	};
+
+	home.packages = [
+		pkgs.python310
+		# Not sure if ipykernel and pip are needed to handle dev-envs
+		pkgs.python310Packages.ipykernel
+		pkgs.python310Packages.pip
+		pkgs.gh		# GitHub CLI 
+		pkgs.gnupg
+	];
 
 	home.stateVersion = "22.11";
 	home.username = "stanisz";
