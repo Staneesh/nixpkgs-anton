@@ -1,20 +1,16 @@
 { pkgs, lib, nixpkgs, ...}: {
 	programs.home-manager.enable = true;
 
-	programs.bash = {
+	programs.nushell = {
 		enable = true;
-		# Hook direnv program to bash shell on shell startup
-		# Start ssh-agent and add private keys - this is not needed if the key has a standard name
-		#profileExtra = ''
-		#	eval "$(direnv hook bash)"
-		#	eval "$(ssh-agent)" && ssh-add ~/.ssh/github
-		#'';
 	};
 
 	programs.git = {
 		enable = true;
 		userName = "Staneesh";
 		userEmail = "blkreasons@outlook.com";
+		signing.key = "FFA25D0D7797E537";
+		signing.signByDefault = true;
 	};
 
 	programs.starship = {
@@ -27,10 +23,7 @@
 	};
 
 	home.packages = [
-		pkgs.python310
-		# Not sure if ipykernel and pip are needed to handle dev-envs
-		pkgs.python310Packages.ipykernel
-		pkgs.python310Packages.pip
+		pkgs.python311
 		pkgs.gh		# GitHub CLI 
 		pkgs.gnupg
 	];
